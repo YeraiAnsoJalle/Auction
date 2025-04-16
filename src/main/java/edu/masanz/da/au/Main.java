@@ -27,6 +27,8 @@ public class Main {
 
         app.get("/admin/*", MainController::iniciar);
         app.post("/admin/*", MainController::iniciar);
+
+
     }
 
 }

@@ -14,7 +14,7 @@ import static edu.masanz.da.au.conf.Ini.*;
  * Y una clase servicio que podrá utilizar cualquiera de las dos implementaciones, la simulada, la real u otra.
  * Por ahora, simplemente es una clase con métodos estáticos que simulan la interacción con una base de datos.
  */
-public class AuctionDao implements IAuctionDao {
+public class   AuctionDao implements IAuctionDao {
 
 
     //region Colecciones que simulan la base de datos

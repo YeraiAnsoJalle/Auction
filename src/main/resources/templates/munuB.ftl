@@ -13,16 +13,16 @@
         <h1>¡Bienvenido, admin!</h1>
         <div class="boton">
             <form action="/admin/validar-pujas" method="post">
-                <a href="validar-pujas.html"><button type="submit">Validar Pujas</button></a>
+                <a href="validar-pujas.ftl"><button type="submit">Validar Pujas</button></a>
             </form>
             <form action="/admin/listar-pujas" method="post">
-                <a href="items-con-pujas.html"><button type="submit">Items con pujas</button></a>
+                <a href="items-con-pujas.ftl"><button type="submit">Items con pujas</button></a>
             </form>
             <form action="/admin/reset" method="post">
-                <a href="resetear-subasta.html"><button type="submit">Resetear Subasta</button></a>
+                <a href="resetear-subasta.ftl"><button type="submit">Resetear Subasta</button></a>
             </form>
             <form action="/admin/ganadores" method="post">
-                <a href="mostrar-ganadores.html"><button type="submit">Mostrar Ganadores</button></a>
+                <a href="mostrar-ganadores.ftl"><button type="submit">Mostrar Ganadores</button></a>
             </form>
             <form action="/admin/gestionar-usuarios" method="post">
                 <a href="gestionar-usuarios.html"><button type="submit">Gestionar Usuarios</button></a>
@@ -41,7 +41,7 @@
                 <button type="submit">Pujas</button>
             </form>
             <form action="/user/historial-pujas" method="get">
-                <a href="historialpujas-user.html"><button type="submit">Historial Pujas</button></a>
+                <a href="historialpujas-user.ftl"><button type="submit">Historial Pujas</button></a>
             </form>
         </div>
     </#if>
