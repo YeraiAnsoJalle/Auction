@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial Pujas</title>
+    <title>Historial de Pujas</title>
     <link rel="stylesheet" href="/doc/web/css/style.css">
 </head>
 <body>
@@ -18,20 +18,18 @@
 
     <div class="contenedorPujasGanadores">
         <h1>Mis Pujas:</h1>
-        <div class="item">
-            <img src="/doc/web/img/paloBayesta.jpeg" alt="Palo con forma de pico">
-            <h2><strong>Palo Bayesta</strong></h2>
-                <p><span>Precio:</span> 20€</p>
-                <p><span>Mi puja:</span> 25€</p>
-        </div>
-        <h1>Mis Subastas: </h1>
-        <div class="item">
-            <img src="/doc/web/img/paloHacha.jpg" alt="Palo con forma de varita">
-            <h2><strong>Palo Hacha</strong></h2>
-            <p><span>Precio inicial:</span> 50€</p>
-            <p><span>Precio final:</span> 75€</p>
-            
-        </div>
+        <#if pujasVigentesUsuario?size == 0>
+            <p>No tienes pujas activas actualmente.</p>
+        <#else>
+            <#list pujasVigentesUsuario as puja>
+                <div class="item">
+                    <img src="${puja.imagen}" alt="${puja.nombre}">
+                    <h2><strong>${puja.nombre}</strong></h2>
+                    <p><span>Precio:</span> ${puja.precioBase}€</p>
+                    <p><span>Mi puja:</span> ${puja.miPuja}€</p>
+                </div>
+            </#list>
+        </#if>
     </div>
 </body>
 </html>

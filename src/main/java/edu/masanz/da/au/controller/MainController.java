@@ -92,4 +92,18 @@ public class MainController {
         model.put("pujasVigentesUsuario", pujasVigentesUsuario);
         context.render("/templates/historialpujas-user.ftl", model);
     }
+
+    public static void verHistorialGanadores(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        List<PujaItem> ganadores = AuctionService.obtenerHistoricoGanadores();
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        model.put("ganadores", ganadores);
+        context.render("/templates/mostrar-ganadores.ftl", model);
+    }
+
 }
