@@ -1,13 +1,12 @@
 package edu.masanz.da.au.controller;
 
-import edu.masanz.da.au.service.AuctionService;
-import edu.masanz.da.au.dto.*;
-
-import io.javalin.http.Context;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import edu.masanz.da.au.dto.PujaItem;
+import edu.masanz.da.au.service.AuctionService;
+import io.javalin.http.Context;
 
 public class MainController {
 
@@ -36,14 +35,14 @@ public class MainController {
             if (authenticated) {
                 isAdministrator = AuctionService.esAdmin(username);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
         }
         Map<String, Object> model = new HashMap<>();
         if (!authenticated) {
             model.put("username", username);
             model.put("error", true);
             context.render("/templates/login.ftl", model);
-        }else {
+        } else {
             context.sessionAttribute("username", username);
             context.sessionAttribute("isAdministrator", isAdministrator);
             context.req().changeSessionId();
@@ -81,4 +80,16 @@ public class MainController {
         context.render("/templates/todo.ftl", model);
     }
 
+    public static void verHistorialPujas(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        List<PujaItem> pujasVigentesUsuario = AuctionService.obtenerPujasVigentesUsuario(username);
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        model.put("pujasVigentesUsuario", pujasVigentesUsuario);
+        context.render("/templates/historialpujas-user.ftl", model);
+    }
 }
