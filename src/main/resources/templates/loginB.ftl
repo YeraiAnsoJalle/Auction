@@ -24,10 +24,10 @@
             </div>
             <h2>Inicio Sesión</h2>
             <form action="/autenticar" method="post">
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" placeholder="username" value="${username}">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" placeholder="********" value="${password}">
+                <label for="index-username">Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="username">
+                <label for="index-password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="********">
                 <button type="submit">ENTRAR</button>
 <#if error>
                 <p class="mensajeError">*Contraseña o usuario incorrectos</p>

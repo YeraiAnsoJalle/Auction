@@ -8,6 +8,8 @@ import edu.masanz.da.au.dto.PujaItem;
 import edu.masanz.da.au.service.AuctionService;
 import io.javalin.http.Context;
 
+import static edu.masanz.da.au.service.AuctionService.obtenerHistoricoGanadores;
+
 public class MainController {
 
     // app.get("/", MainController::iniciar);
@@ -19,7 +21,7 @@ public class MainController {
         Map<String, Object> model = new HashMap<>();
         model.put("username", "");
         model.put("error", false);
-        context.render("/templates/login.ftl", model);
+        context.render("/templates/loginB.ftl", model);
     }
 
     // app.post("/autenticar", MainController::autenticar);
@@ -41,12 +43,13 @@ public class MainController {
         if (!authenticated) {
             model.put("username", username);
             model.put("error", true);
-            context.render("/templates/login.ftl", model);
+            context.render("/templates/loginB.ftl", model);
         } else {
             context.sessionAttribute("username", username);
             context.sessionAttribute("isAdministrator", isAdministrator);
             context.req().changeSessionId();
-            context.redirect("/menu");
+            model.put("isAdministrator", isAdministrator);
+            context.render("/templates/menuB.ftl", model);
         }
     }
 
@@ -60,7 +63,7 @@ public class MainController {
         boolean isAdministrator = context.sessionAttribute("isAdministrator");
         Map<String, Object> model = new HashMap<>();
         model.put("isAdministrator", isAdministrator);
-        context.render("/templates/menu.ftl", model);
+        context.render("/templates/menuB.ftl", model);
     }
 
     //app.post("/admin/user-management", MainController::gestionarUsuarios);
@@ -99,10 +102,10 @@ public class MainController {
             context.redirect("/error");
             return;
         }
-        List<PujaItem> ganadores = AuctionService.obtenerHistoricoGanadores();
+        List<PujaItem> ganadores = obtenerHistoricoGanadores();
         Map<String, Object> model = new HashMap<>();
         model.put("username", username);
-        model.put("ganadores", ganadores);
+        model.put("obtenerHistoricoGanadores", obtenerHistoricoGanadores());
         context.render("/templates/mostrar-ganadores.ftl", model);
     }
 

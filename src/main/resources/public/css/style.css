@@ -1,292 +1,190 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html, body {
-    width: 100%;
-    height: 100%;
-}
 body {
-    background-image: url("../imgs/bgs/puja.webp");
-    /* background-image: url("../imgs/bgs/gente.jpg"); */
-    background-size:cover;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-image: url(https://i.postimg.cc/Kv6v58C0/background-pattern-green-leaves-wall-1106661.jpg);
 }
-.main-container {
-    position: relative;
-    opacity: 0.8;
-    background-color: white;
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    margin: auto auto;
-}
-.main-container > * {
-    margin-top: 0.5rem;
-}
+
+/* Estilo del título principal */
 h1 {
-    width: 100%;
+    color: white;
+    font-size: 30px;
+    margin: 20px;
     text-align: center;
-    font-size: 3.5rem;
-    padding: 20px;
-    color: brown;
 }
-.img-container, .input-group {
-    width: 100%;
+
+/* Contenedor principal */
+.contenedor {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-img.icon-xl {
-    height: auto;
-    width: 100%;
-}
-img.icon-lg {
-    height: auto;
-    width: 120px;
-}
-img.icon-md {
-    height: auto;
-    width: 80px;
-    transform: translate(-25%, 25%);
-    -ms-transform: translate(-25%, 25%); /* IE 9 */
-    -webkit-transform: translate(-25%, 25%); /* Chrome, Safari, Opera */
-}
-img.icon-sm {
-    width: 32px;
-    height: 32px;
-    transform: translate(-25%, 25%);
-    -ms-transform: translate(-25%, 25%); /* IE 9 */
-    -webkit-transform: translate(-25%, 25%); /* Chrome, Safari, Opera */
-}
-.center, form {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-p {
-    font-size: 1.3rem;
-    text-align: center;
-}
-.alert {
-    color: brown;
-}
-input[type="text"], 
-input[type="url"], 
-input[type="number"], 
-input[type="password"],
-select,
-textarea {
-    font-size: 2rem;
-    text-align: center;
-    color: brown;
-    border: none;
-    border-bottom: 2px solid brown;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-}
-textarea,
-input[type="number"] {
-    border: 2px solid brown;
-}
-#clave {
-    margin-top: 3px;
-}
-.btn {
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
+    padding: 10px;
     border-radius: 10px;
-    background-color: burlywood;
-    color: brown;
-}
-.btn:active {
+    margin: 30px;
+    margin-top: 10px;
     color: black;
-    background-color: bisque;
-}
-div form:last-child .btn {
-    margin-bottom: 3rem;
-    /*margin-bottom: 16px;*/
-}
-.btn-md {
-    width: 240px;
-}
-.btn-lg {
-    width: 320px;
 }
 
-/* Botón-icono */
-.icon-btn {
-    display: inline-block;
+/* Estilo del input de puja */
+#puja {
+    width: 100px;
+    padding: 5px;
+    font-size: 14px;
     text-align: center;
-    vertical-align: middle;
-    width: 100%;
-    border: 1px solid brown;
-    border-radius: 10px;
-    background-color: burlywood;
-    color: brown;
-    box-shadow: #595959 2px 2px 2px;
-    & img {
-        margin-bottom: 10px;
-        margin-left: 20px;
-    }
-}
-/* Menu */
-#menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-/* Return */
-#return {
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
-/* Formulario */
-.input-element-vertical {
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: left;
+/* Contenedor de pujas y ganadores */
+.contenedorPujasGanadores {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.input-element-horizontal {
-    padding-left: 20px;
-    padding-right: 20px;
+
+/* Estilo de cada item */
+.item {
+    background: #d29566;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Estilo de las imágenes dentro de los items */
+.item img {
+    width: 70%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de los encabezados dentro de los items */
+.item h2 {
+    color: white;
+    margin: 0;
+    padding: 10px;
+    background: #543912;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+/* Estilo de los spans */
+span {
+    font-weight: bold;
+}
+
+/* Estilo de los botones */
+button {
     width: 100%;
+    padding: 20px;
+    background: #2c1c04;
+    border: 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+/* Estilo de los enlaces al pasar el ratón por encima */
+a:hover {
+    background-color: rgb(71, 48, 5);
+}
+
+/* Caja de login */
+.cajaLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #d29566;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    color: black;
+}
+
+/* Estilo de los enlaces */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilo del logo */
+#logo {
+    margin-top: 30px;
+}
+
+/* Estilo del avatar */
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+/* Estilo de las imágenes dentro de la clase salir */
+.salir img {
+    display: flex;
+    justify-content: flex;
+    width: 50px;
+    padding: 10px;
+    background: white;
+    border: 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+/* Estilo de los botones */
+.boton {
+    margin-top: 10px;
+}
+
+/* Contenedor de botones */
+.botones {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-top: 10px;
 }
-.input-element-center {
-    padding-left: 20px;
-    padding-right: 20px;
+
+/* Estilo de las imágenes dentro del avatar */
+.avatar img {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    border-radius: 50%;
 }
-.input-element-left {
-    padding-left: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.input-sm {
-    width: 140px;
-}
-.input-md {
-    width: 200px;
-}
-.input-lg {
-    width: 100%;
-    text-align: left !important;
-}
+
+/* Estilo de las etiquetas */
 label {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-}
-.lbl-lg {
-    font-size: 3rem;
-    padding-left: 20px;
-    color: brown;
+    display: block;
+    margin: 10px 0 5px;
 }
 
-/* Flex widths */
-
-.w12 {
-    flex: 100%;
-    max-width: 100%;
-    padding: 0;
-}
-.w11 {
-    flex: 91.66%;
-    max-width: 91.66%;
-    padding: 0;
-}
-.w10 {
-    flex: 83.33%;
-    max-width: 83.33%;
-    padding: 0;
-}
-.w9 {
-    flex: 75%;
-    max-width: 75%;
-    padding: 0;
-}
-.w8 {
-    flex: 66.66%;
-    max-width: 66.66%;
-    padding: 0;
-}
-.w7 {
-    flex: 58.33%;
-    max-width: 58.33%;
-    padding: 0;
-}
-.w6 {
-    flex: 50%;
-    max-width: 50%;
-    padding: 0;
-}
-.w5 {
-    flex: 41.66%;
-    max-width: 41.66%;
-    padding: 0;
-}
-.w4 {
-    flex: 33.33%;
-    max-width: 33.33%;
-    padding: 0;
-}
-.w3 {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0;
-}
-.w2 {
-    flex: 16.66%;
-    max-width: 16.66%;
-    padding: 0;
-}
-.w1 {
-    flex: 8.33%;
-    max-width: 8.33%;
-    padding: 0;
+/* Estilo de los inputs */
+input {
+    width: 90%;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
 }
 
-/* Media Queries */
-
-@media screen and (min-width: 600px) {
-    .main-container {
-        width: 540px;
-        border: 1px solid black;
-        border-radius: 20px;
-    }
+/* Estilo de los mensajes de error */
+.mensajeError {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
-@media screen and (max-width: 460px) {
-    .input-group {
-        flex-flow: column;
-    }
-    .no-min-display {
-        display: none;
-    }
-    img.icon-lg {
-        width: 100px;
-    }
-    .input-sm {
-        width: 100px;
-    }
-    .input-md {
-        width: 150px;
-    }
-    .layout {
-        padding: 0 5px;
-    }
+/* Estilo de las etiquetas */
+label {
+    color: white;
+    align-items: center;
 }

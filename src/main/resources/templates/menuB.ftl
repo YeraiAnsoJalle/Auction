@@ -21,7 +21,7 @@
             <form action="/admin/reset" method="post">
                 <a href="resetear-subasta.ftl"><button type="submit">Resetear Subasta</button></a>
             </form>
-            <form action="/admin/ganadores" method="post">
+            <form action="/admin/mostrar-ganadores" method="post">
                 <a href="mostrar-ganadores.ftl"><button type="submit">Mostrar Ganadores</button></a>
             </form>
             <form action="/admin/gestionar-usuarios" method="post">
@@ -32,7 +32,7 @@
             </form>
         </div>
     <#else>
-        <h1>¡Bienvenido, ${username}!</h1>
+        <h1>¡Bienvenido, usuario!</h1>
         <div class="boton">
             <form action="/user/crear-puja" method="post">
                 <button type="submit">Crear Subasta</button>
@@ -40,8 +40,8 @@
             <form action="/user/lista-pujas" method="get">
                 <button type="submit">Pujas</button>
             </form>
-            <form action="/user/historial-pujas" method="get">
-                <a href="historialpujas-user.ftl"><button type="submit">Historial Pujas</button></a>
+            <form action="historialpujas-user" method="get">
+                <a href="historialpujas-user"><button type="submit">Historial Pujas</button></a>
             </form>
         </div>
     </#if>

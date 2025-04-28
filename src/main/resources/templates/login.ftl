@@ -23,7 +23,7 @@
         <form action="/autenticar" method="post">
             <p>Por favor, identifíquese para acceder</p>
             <div class="input-group">
-                <input type="text" class="input-md" id="username" placeholder="nombre" name="username" value="${username}"/>
+                <input type="text" class="input-md" id="username" placeholder="nombre" name="username"/>
                 <input type="password" class="input-md" id="password" placeholder="*clave*" name="password"/>
             </div>
 <#if error>            

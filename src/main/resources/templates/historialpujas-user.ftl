@@ -23,10 +23,10 @@
         <#else>
             <#list pujasVigentesUsuario as puja>
                 <div class="item">
-                    <img src="${puja.imagen}" alt="${puja.nombre}">
-                    <h2><strong>${puja.nombre}</strong></h2>
-                    <p><span>Precio:</span> ${puja.precioBase}€</p>
-                    <p><span>Mi puja:</span> ${puja.miPuja}€</p>
+                    <img src="${puja.urlImagen}" alt="${puja.nombreItem}">
+                    <h2><strong>${puja.nombreItem}</strong></h2>
+                    <p><span>Precio:</span> ${puja.precioInicio}€</p>
+                    <p><span>Mi puja:</span> ${puja.precioPujado}€</p>
                 </div>
             </#list>
         </#if>

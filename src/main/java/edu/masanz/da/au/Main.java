@@ -25,6 +25,12 @@ public class Main {
         app.post("/admin/user-management", MainController::gestionarUsuarios);
         app.get("/admin/user-management", MainController::gestionarUsuarios);
 
+        app.post("historialpujas-user", MainController::verHistorialPujas);
+        app.get("historialpujas-user", MainController::verHistorialPujas);
+
+        app.post("/admin/mostrar-ganadores", MainController::verHistorialGanadores);
+        app.get("/admin/mostrar-ganadores", MainController::verHistorialGanadores);
+
         app.get("/admin/*", MainController::iniciar);
         app.post("/admin/*", MainController::iniciar);
 
