@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.masanz.da.au.dto.Item;
 import edu.masanz.da.au.dto.PujaItem;
 import edu.masanz.da.au.service.AuctionService;
 import io.javalin.http.Context;
 
+import static edu.masanz.da.au.service.AuctionService.obtenerArticulosPujables;
 import static edu.masanz.da.au.service.AuctionService.obtenerHistoricoGanadores;
 
 public class MainController {
@@ -107,6 +109,19 @@ public class MainController {
         model.put("username", username);
         model.put("obtenerHistoricoGanadores", obtenerHistoricoGanadores());
         context.render("/templates/mostrar-ganadores.ftl", model);
+    }
+
+    public static void verArticulosPujables(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        List<Item> ganadores = obtenerArticulosPujables();
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        model.put("obtenerArticulosPujables", obtenerArticulosPujables());
+        context.render("/templates/pujas.ftl", model);
     }
 
 }

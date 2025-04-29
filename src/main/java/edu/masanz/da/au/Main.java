@@ -31,6 +31,9 @@ public class Main {
         app.post("/admin/mostrar-ganadores", MainController::verHistorialGanadores);
         app.get("/admin/mostrar-ganadores", MainController::verHistorialGanadores);
 
+        app.post("pujas", MainController::verArticulosPujables);
+        app.get("pujas", MainController::verArticulosPujables);
+
         app.get("/admin/*", MainController::iniciar);
         app.post("/admin/*", MainController::iniciar);
 
