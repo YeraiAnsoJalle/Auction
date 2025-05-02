@@ -33,7 +33,7 @@ public class   AuctionDao implements IAuctionDao {
 //        )
 //    );
 
-    private static Map<Long, Item> mapaItems;// = new HashMap<Long, Item>(
+    static Map<Long, Item> mapaItems;// = new HashMap<Long, Item>(
 //            Map.of(
 //                    1L, new Item(1L, "Figura de \"R2-D2\"",
 //                            "Figura mecánica activada por voz. Paquete original. Para mayores de 8 años. Incluye poster.",
