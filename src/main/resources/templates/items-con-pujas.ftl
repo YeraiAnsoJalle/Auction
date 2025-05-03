@@ -18,60 +18,32 @@
     </div>
 
     <div class="contenedorPujasGanadores">
-        <div class="item">
-            <img src="/doc/web/img/paloBayesta.jpeg" alt="imagen palo">
-            <h2><strong>Palo Bayesta</strong></h2>
-                <p><span>Precio inicial:</span> 20€</p>
-                <p><span>Descripción:</span> Palo con forma de bayesta</p>
-                <p><span>Creador:</span>Usuario1</p>
-            <h2><strong>Pujadores:</strong></h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Usuario2</td>
-                        <td>25€</td>
-                    </tr>
-                    <tr>
-                        <td>Usuario3</td>
-                        <td>30€</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="item">
-            <img src="/doc/web/img/paloMaza.jpg" alt="imagen maza">
-            <h2><strong>Palo Maza</strong></h2>
-                <p><span>Precio inicial:</span> 120€</p>
-                <p><span>Descripción:</span> Palo con forma de Maza</p>
-                <p><span>Creador:</span>Usuario1</p>
-            <h2><strong>Pujadores:</strong></h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Usuario2</td>
-                        <td>125€</td>
-                    </tr>
-                    <tr>
-                        <td>Usuario3</td>
-                        <td>130€</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <#list items as item>
+            <div class="item">
+                <img src="${item.imagen}" alt="imagen ${item.nombre}">
+                <h2><strong>${item.nombre}</strong></h2>
+                <p><span>Precio inicial:</span> ${item.precioInicial}€</p>
+                <p><span>Descripción:</span> ${item.descripcion}</p>
+                <p><span>Creador:</span> ${item.creador}</p>
+                <h2><strong>Pujadores:</strong></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <#list item.pujas as puja>
+                            <tr>
+                                <td>${puja.usuario}</td>
+                                <td>${puja.cantidad}€</td>
+                            </tr>
+                        </#list>
+                    </tbody>
+                </table>
+            </div>
+        </#list>
     </div>
-</div>
 </body>
 </html>
