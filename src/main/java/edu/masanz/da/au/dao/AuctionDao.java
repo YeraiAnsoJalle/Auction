@@ -53,7 +53,7 @@ public class   AuctionDao implements IAuctionDao {
 //            )
 //    );
 
-    private static Map<Long, List<Puja>> mapaPujas;// = new HashMap<>(
+    static Map<Long, List<Puja>> mapaPujas;// = new HashMap<>(
 //            Map.of(
 //                    5L, new ArrayList<>(Arrays.asList(
 //                            new Puja(5L, "Silvia", 25, "2024-12-31 23:52:01.265"),

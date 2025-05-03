@@ -133,4 +133,11 @@ public class PujaItem {
                 idItem, nombreItem, precioInicio, nombrePropietario, precioPujado, nombreComprador, instanteTiempo.substring(0,10));
     }
 
+    public Item getPuja() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPuja'");
+    }
+
+
+
 }
