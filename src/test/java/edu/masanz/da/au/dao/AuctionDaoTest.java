@@ -44,12 +44,12 @@ class AuctionDaoTest {
 
         assertFalse(auctionDao.autenticar(nombreUsuario, password));
     }
-/*
+
     @Test
     void autenticar_UsuarioNulo_DevuelveFalse() {
         assertFalse(auctionDao.autenticar(null, "contraseña"));
     }
-*/
+
     // Pruebas para esAdmin(String)
     @Test
     void esAdmin_UsuarioEsAdmin_DevuelveTrue() {
@@ -69,12 +69,12 @@ class AuctionDaoTest {
         String nombreUsuario = "UsuarioInexistente";
         assertFalse(auctionDao.esAdmin(nombreUsuario));
     }
-/*
+
     @Test
     void esAdmin_UsuarioNulo_DevuelveFalse() {
         assertFalse(auctionDao.esAdmin(null));
     }
-*/
+
     // Pruebas para obtenerUsuarios()
     @Test
     void obtenerUsuarios_DevuelveListaNoVacia() {
@@ -106,13 +106,13 @@ class AuctionDaoTest {
         Usuario usuario = auctionDao.obtenerUsuario(nombreUsuario);
         assertNull(usuario);
     }
-/*
+
     @Test
     void obtenerUsuario_NombreNulo_DevuelveNull() {
         Usuario usuario = auctionDao.obtenerUsuario(null);
         assertNull(usuario);
     }
-*/
+
     // Pruebas para crearUsuario(String, String, boolean)
     @Test
     void crearUsuario_NuevoUsuario_DevuelveTrue() {
@@ -136,12 +136,12 @@ class AuctionDaoTest {
 
         assertFalse(auctionDao.crearUsuario(nombre, password, esAdmin));
     }
-/*
+
     @Test
     void crearUsuario_NombreNulo_DevuelveFalse() {
         assertFalse(auctionDao.crearUsuario(null, "password", false));
     }
-*/
+
     // Pruebas para modificarPasswordUsuario(String, String)
     @Test
     void modificarPasswordUsuario_UsuarioExistente_DevuelveTrueYCambiaPassword() {
@@ -161,13 +161,13 @@ class AuctionDaoTest {
 
         assertFalse(auctionDao.modificarPasswordUsuario(nombre, nuevaPassword));
     }
-/*
+
     @Test
     void modificarPasswordUsuario_PasswordNula_DevuelveFalse() {
         String nombre = "Admin";
         assertFalse(auctionDao.modificarPasswordUsuario(nombre, null));
     }
-*/
+
     // Pruebas para modificarRolUsuario(String, String)
     @Test
     void modificarRolUsuario_UsuarioExistente_DevuelveTrueYCambiaRol() {
@@ -187,7 +187,7 @@ class AuctionDaoTest {
 
         assertFalse(auctionDao.modificarRolUsuario(nombre, nuevoRol));
     }
-/*
+
     @Test
     void modificarRolUsuario_RolInvalido_DevuelveFalse() {
         String nombre = "Silvia";
@@ -195,7 +195,7 @@ class AuctionDaoTest {
 
         assertFalse(auctionDao.modificarRolUsuario(nombre, rolInvalido));
     }
-*/
+
     // Pruebas para eliminarUsuario(String)
     @Test
     void eliminarUsuario_UsuarioExistente_DevuelveTrueYUsuarioEliminado() {
@@ -212,12 +212,12 @@ class AuctionDaoTest {
         String nombre = "UsuarioInexistente";
         assertFalse(auctionDao.eliminarUsuario(nombre));
     }
-/*
+
     @Test
     void eliminarUsuario_NombreNulo_DevuelveFalse() {
         assertFalse(auctionDao.eliminarUsuario(null));
     }
-*/
+
     // Pruebas para obtenerArticulosPendientes()
     @Test
     void obtenerArticulosPendientes_DevuelveSoloArticulosPendientes() {
@@ -293,6 +293,4 @@ class AuctionDaoTest {
         long idInexistente = -1L;
         assertFalse(auctionDao.validarArticulo(idInexistente, true));
     }
-
-    
 }
