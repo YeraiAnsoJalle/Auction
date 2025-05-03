@@ -3,12 +3,14 @@ package edu.masanz.da.au.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import edu.masanz.da.au.dto.Item;
 import edu.masanz.da.au.dto.PujaItem;
 import edu.masanz.da.au.service.AuctionService;
 import io.javalin.http.Context;
 
+import static edu.masanz.da.au.conf.Ctes.EST_PENDIENTE;
 import static edu.masanz.da.au.service.AuctionService.obtenerArticulosPujables;
 import static edu.masanz.da.au.service.AuctionService.obtenerHistoricoGanadores;
 
@@ -124,4 +126,76 @@ public class MainController {
         context.render("/templates/pujas.ftl", model);
     }
 
+    public static void pujarArticulo(Context context) {
+        String username = context.formParam("username");
+        String password = context.formParam("password");
+        String pujaStr = context.formParam("puja");
+        String itemIdStr = context.formParam("itemId");
+
+        boolean authenticated = false;
+        boolean isAdmin = false;
+        int cantidadPuja = 0;
+        long itemId = 0;
+
+        try {
+            authenticated = AuctionService.autenticar(username, password);
+            isAdmin = AuctionService.esAdmin(username);
+            cantidadPuja = Integer.parseInt(pujaStr);
+            itemId = Long.parseLong(itemIdStr);
+        } catch (Exception e) {
+            context.redirect("/error");
+            return;
+        }
+
+        if (!authenticated) {
+            Map<String, Object> model = new HashMap<>();
+            model.put("username", username);
+            model.put("error", true);
+            context.render("/templates/loginB.ftl", model);
+            return;
+        }
+
+        boolean exito = AuctionService.pujarArticulo(itemId, username, cantidadPuja);
+
+        if (exito) {
+            context.redirect("/menu");
+        } else {
+            context.result("La puja no pudo realizarse. Verifica el monto o el artículo.");
+        }
+    }
+    public static void crearSubasta(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        String nombre = context.formParam("nombre");
+        String descripcion = context.formParam("descripcion");
+        int precio = Integer.parseInt(Objects.requireNonNull(context.formParam("precio")));
+        String imagen = context.formParam("imagen");
+
+        Item item = new Item(nombre, descripcion, precio, imagen, username);
+
+        if (precio <= 0 || nombre == null || descripcion == null || imagen == null || imagen.isEmpty()) {
+            context.redirect("/error");
+            return;
+        }
+
+        if (AuctionService.ofrecerArticulo(item)) {
+            context.redirect("/menu");
+        } else {
+            context.redirect("/error");
+        }
+    }
+
+    public static void servirOfrecerProducto(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        context.render("/templates/crear-puja.ftl", model);
+    }
 }

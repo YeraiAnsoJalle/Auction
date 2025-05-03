@@ -37,7 +37,7 @@
         <h1>¡Bienvenido, usuario!</h1>
         <div class="contenedor">
             <div class="boton">
-                <form action="/user/crear-puja" method="post">
+                <form action="/crear-puja" method="post">
                     <button type="submit">Crear Subasta</button>
                 </form>
                 <form action="pujas" method="get">

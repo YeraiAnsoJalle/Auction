@@ -37,6 +37,11 @@ public class Main {
         app.get("/admin/*", MainController::iniciar);
         app.post("/admin/*", MainController::iniciar);
 
+        app.get("/pujar", MainController::pujarArticulo);
+        app.post("/pujar", MainController::pujarArticulo);
+
+        app.get("/crear-puja", MainController::crearSubasta);
+        app.post("/crear-puja", MainController::servirOfrecerProducto);
 
     }
 

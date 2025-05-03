@@ -293,4 +293,6 @@ class AuctionDaoTest {
         long idInexistente = -1L;
         assertFalse(auctionDao.validarArticulo(idInexistente, true));
     }
+
+    
 }

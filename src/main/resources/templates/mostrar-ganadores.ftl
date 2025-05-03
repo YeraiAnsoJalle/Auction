@@ -18,25 +18,23 @@
     </div>
 </div>
 
-<div class="contenedorPujasGanadores">
     <h1>Ganadores Pujas</h1>
-
-    <div class="contenedor">
         <#if obtenerHistoricoGanadores?size == 0>
             <p>No hay pujas terminadas actualmente.</p>
         <#else>
+            <div class="item">
             <#list obtenerHistoricoGanadores as ganador>
-                <div class="item">
+
                     <img src="${ganador.urlImagen}" alt="${ganador.nombreItem}">
                     <h2><strong>${ganador.nombreItem}</strong></h2>
                     <p><span>Fecha:</span> ${ganador.instanteTiempo}</p>
                     <p><span>Comprador:</span> ${ganador.nombreComprador}</p>
                     <p><span>Precio vendido:</span> ${ganador.precioPujado}€</p>
-                </div>
+
             </#list>
+            </div>
         </#if>
-    </div>
-</div>
+
 </body>
 
 </html>

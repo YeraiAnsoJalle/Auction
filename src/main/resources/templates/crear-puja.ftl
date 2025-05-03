@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-        <!--DIAPOSITIVA 6, ENEKO
-        Pestaña de previsualización para la creación de una puja por parte de un usuario-->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crear-puja</title>
+    <title>Crear Puja</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="contenedor">
-        <div class="botones">
-            <div class="salir">
-                <a href="/doc/web/index.html"><img src="/doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
-            </div>
-            <div class="salir">
-                <a href="/doc/web/user/menu-user.html"><img src="/doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
-            </div>
+<div class="contenedor">
+    <div class="botones">
+        <div class="salir">
+            <a href="/doc/web/index.html"><img src="/doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
         </div>
-        <h1>Crear Subasta</h1>
-        <form>
-            <label for="title">Nombre</label>
-            <input type="text" id="title" name="title" placeholder="titulo" required>
+        <div class="salir">
+            <a href="/doc/web/user/menu-user.html"><img src="/doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
+        </div>
+    </div>
+    <h1>Crear Subasta</h1>
+    <div class="item">
+        <form action="/crear-puja" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="nombre" required>
 
-            <label for="imageURL">URL Imagen</label>
-            <input type="text" id="imageURL" name="imageURL" placeholder="imagenURL" required>
+            <label for="imagen">URL Imagen</label>
+            <input type="text" id="imagen" name="imagen"  min="1" placeholder="imagenURL" required>
 
-            <label for="description">Descripción</label>
-            <input type="text" id="description" name="description" placeholder="descripcion" required>
+            <label for="descripcion">Descripción</label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="descripcion" required>
 
-            <label for="price">Precio Inicial</label>
-            <input type="number" id="price" name="price" placeholder="precio" required>
+            <label for="precio">Precio Inicial</label>
+            <input type="number" id="precio" name="precio" placeholder="precio" required>
 
-            <a href="crear-puja-prev.ftl"><button type="submit">CREAR</button></a>
+            <button type="submit" value="Solicitar">CREAR</button>
         </form>
     </div>
+</div>
 </body>
 </html>
