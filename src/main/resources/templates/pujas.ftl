@@ -37,6 +37,7 @@
                                     <input type="password" name="password" id="password_${pujas.id}" placeholder="********" required>
 
                                     <button type="submit">PUJAR</button>
+                                    <br>
                                 </form>
                             </div>
                     </#list>
