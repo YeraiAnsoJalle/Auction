@@ -16,11 +16,11 @@
 <body>
     <div class="contenedor">
         <div class="cajaLogo">
-            <img src="doc/web/img/logoWooden.png" id="logo" alt="Wooden Sticks">
+            <img src="https://i.postimg.cc/bYxfSGLg/logo-Wooden.png" id="logo" alt="Wooden Sticks">
         </div>
         <div class="cajaLogin">
             <div class="avatar">
-                <img src= "doc/web/img/imagenUsuario.png"alt="Avatar">
+                <img src= "https://i.postimg.cc/pTst147T/imagen-Usuario.png"alt="Avatar">
             </div>
             <h2>Inicio Sesión</h2>
             <form action="/autenticar" method="post">

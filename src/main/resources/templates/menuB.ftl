@@ -10,6 +10,9 @@
 <body>
 <div class="main-container">
     <#if isAdministrator>
+        <div class="salir">
+            <a href="/exit"><img src="https://i.postimg.cc/1tZPbDJg/icono-Salir.png" alt="iconoSalir"/></a>
+        </div>
         <h1>¡Bienvenido, admin!
             <div class="contenedor">
                 <div class="boton">
@@ -34,6 +37,9 @@
                 </div>
             </div>
     <#else>
+        <div class="salir">
+            <a href="/exit"><img src="https://i.postimg.cc/1tZPbDJg/icono-Salir.png" alt="iconoSalir"/></a>
+        </div>
         <h1>¡Bienvenido, usuario!</h1>
         <div class="contenedor">
             <div class="boton">

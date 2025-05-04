@@ -11,10 +11,7 @@
 <body>
 <div class="botones">
     <div class="salir">
-        <a href="loginB.ftl"><img src="doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
-    </div>
-    <div class="salir">
-        <a href="menuB.ftl"><img src="doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
+        <a href="/exit"><img src="https://i.postimg.cc/1tZPbDJg/icono-Salir.png" alt="iconoSalir"/></a>
     </div>
 </div>
 
