@@ -13,7 +13,7 @@
 <div class="contenedor">
     <div class="botones">
         <div class="salir">
-            <a href="/crear-puja"><img src="/doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
+            <a href="/crear-puja"><img src="doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
         </div>
     </div>
 
