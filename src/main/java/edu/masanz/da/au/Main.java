@@ -43,6 +43,8 @@ public class Main {
         app.get("/crear-puja", MainController::crearSubasta);
         app.post("/crear-puja", MainController::servirOfrecerProducto);
 
+        app.get("/admin/resetear-subasta", MainController::marcarTodosLosItemsComoHistoricos);
+
     }
 
 }

@@ -1,9 +1,6 @@
 package edu.masanz.da.au.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 import edu.masanz.da.au.dto.Item;
 import edu.masanz.da.au.dto.PujaItem;
@@ -215,5 +212,24 @@ public class MainController {
         AuctionService.resetearSubasta();
         context.redirect("/menu");
     }
-    
+
+
+    public static void marcarTodosLosItemsComoHistoricos(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        boolean isAdministrator = context.sessionAttribute("isAdministrator");
+        if (!isAdministrator) {
+            context.redirect("/error");
+            return;
+        }
+
+        AuctionService.resetearSubasta();
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        context.render("/templates/resetear-subasta.ftl", model);
+    }
+
 }
