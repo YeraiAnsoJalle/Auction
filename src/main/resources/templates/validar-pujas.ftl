@@ -19,26 +19,32 @@
         </div>
     </div>
 
-    <div class="contenedorPujasGanadores">
-        <div class="item">
-            <img src="/doc/web/img/paloBayesta.jpeg" alt="imagen palo">
-            <h2><strong>Palo Bayesta</strong></h2>
-                <p><span>Precio:</span> 20€</p>
-                <p><span>Descripción:</span> Palo con forma de pico</p>
-                <p><span>Creador:</span>Usuario1</p>
-                <button>VALIDAR</button>
-                <button>DENEGAR</button>
-        </div>
-        <div class="item">
-            <img src="/doc/web/img/paloPistola.jpg" alt="imagen palo">
-            <h2><strong>Palo Pistola</strong></h2>
-                <p><span>Precio:</span> 150€</p>
-                <p><span>Descripción:</span> Palo con forma de pistola</p>
-                <p><span>Creador:</span>Usuario2</p>
-                <button>VALIDAR</button>
-                <button>DENEGAR</button>
-        </div>
+    <#if items?size == 0>
+        <p>No hay subastas pendientes de validación.</p>
+    <#else>
+        <#list obtenerArticulosPendientes() as item>
+            <div class="item">
+                <img src="${item.imagen}" alt="imagen ${item.nombre}">
+                <h2><strong>${item.nombre}</strong></h2>
+                <p><span>Precio:</span> ${item.precio}€</p>
+                <p><span>Descripción:</span> ${item.descripcion}</p>
+                <p><span>Creador:</span> ${item.propietario}</p>
+
+                <form method="post" action="/admin/validar-item">
+                    <input type="hidden" name="itemId" value="${item.id}">
+                    <input type="hidden" name="accion" value="ACEPTAR">
+                    <button type="submit">VALIDAR</button>
+                </form>
+
+                <form method="post" action="/admin/validar-item">
+                    <input type="hidden" name="itemId" value="${item.id}">
+                    <input type="hidden" name="accion" value="DENEGAR">
+                    <button type="submit">DENEGAR</button>
+                </form>
+            </div>
+        </#list>
+    </#if>
+
     </div>
-</div>
 </body>
 </html>

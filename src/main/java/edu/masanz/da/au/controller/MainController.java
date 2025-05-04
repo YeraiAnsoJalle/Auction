@@ -232,4 +232,19 @@ public class MainController {
         context.render("/templates/resetear-subasta.ftl", model);
     }
 
+    public static void mostrarSubastasPendientes(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null || !(Boolean.TRUE.equals(context.sessionAttribute("isAdministrator")))) {
+            context.redirect("/error");
+            return;
+        }
+
+        List<Item> itemsPendientes = AuctionService.obtenerArticulosPendientes();
+
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        model.put("items", itemsPendientes);
+        context.render("/templates/validar-subastas.ftl", model);
+    }
+
 }
