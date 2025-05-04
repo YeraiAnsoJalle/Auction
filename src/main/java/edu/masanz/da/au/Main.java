@@ -45,7 +45,9 @@ public class Main {
 
         app.get("/admin/resetear-subasta", MainController::marcarTodosLosItemsComoHistoricos);
 
-        app.get("/admin/validar-subastas", MainController::mostrarSubastasPendientes);
+        app.get("/admin/validar-pujas", MainController::mostrarSubastasPendientes);
+
+
 
     }
 

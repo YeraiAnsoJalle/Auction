@@ -3,6 +3,7 @@ package edu.masanz.da.au.controller;
 import java.util.*;
 
 import edu.masanz.da.au.dto.Item;
+import edu.masanz.da.au.dto.ItemPujas;
 import edu.masanz.da.au.dto.PujaItem;
 import edu.masanz.da.au.service.AuctionService;
 import io.javalin.http.Context;
@@ -244,7 +245,29 @@ public class MainController {
         Map<String, Object> model = new HashMap<>();
         model.put("username", username);
         model.put("items", itemsPendientes);
-        context.render("/templates/validar-subastas.ftl", model);
+        context.render("/templates/validar-pujas.ftl", model);
+    }
+
+    public static void mostrarArticulosConPujas(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+
+        boolean isAdministrator = context.sessionAttribute("isAdministrator");
+        if (!isAdministrator) {
+            context.redirect("/error");
+            return;
+        }
+
+        List<ItemPujas> articulosConPujas = AuctionService.obtenerArticulosConPujas();
+
+        Map<String, Object> model = new HashMap<>();
+        model.put("username", username);
+        model.put("articulos", articulosConPujas);
+
+        context.render("/templates/items-con-pujas.ftl", model);
     }
 
 }
