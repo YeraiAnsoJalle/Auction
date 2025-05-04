@@ -183,5 +183,26 @@ public class BDController {
         }
     }
 
+    public void validarPuja(long pujaId, boolean esValida) {
+        String sql = "UPDATE pujas SET validada = ? WHERE id = ?";
+        try (Connection conn = conectar();
+             PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            pst.setBoolean(1, esValida);
+            pst.setLong(2, pujaId);
+
+            int filasAfectadas = pst.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                System.out.println("Puja con ID " + pujaId + " actualizada correctamente. Estado validada: " + esValida);
+            } else {
+                System.out.println("No se encontró ninguna puja con ID " + pujaId + " para actualizar.");
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al validar la puja con ID " + pujaId + ":");
+            e.printStackTrace();
+        }
+    }
 
 }
