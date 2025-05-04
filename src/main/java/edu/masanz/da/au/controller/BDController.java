@@ -121,4 +121,31 @@ public class BDController {
         }
     }
 
+    public void obtenerArticulosPendientes() {
+        try (Connection conn = conectar()) {
+            String sql = "SELECT * FROM articulos WHERE validado = false";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getLong("id") + ", Título: " + rs.getString("titulo"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void validarArticulo(long id, boolean validado) {
+        try (Connection conn = conectar()) {
+            String sql = "UPDATE articulos SET validado = ? WHERE id = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setBoolean(1, validado);
+            pst.setLong(2, id);
+            pst.executeUpdate();
+            System.out.println("Artículo actualizado.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
