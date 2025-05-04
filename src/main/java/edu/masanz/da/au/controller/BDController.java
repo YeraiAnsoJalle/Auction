@@ -27,4 +27,46 @@ public class BDController {
         }
     }
 
+    public boolean esAdmin(String username) {
+        try (Connection conn = conectar()) {
+            String sql = "SELECT admin FROM usuarios WHERE nombre = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            ResultSet rs = pst.executeQuery();
+            return rs.next() && rs.getBoolean("admin");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public void obtenerUsuarios() {
+        try (Connection conn = conectar()) {
+            String sql = "SELECT * FROM usuarios";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                System.out.println(rs.getString("nombre") + " - Admin: " + rs.getBoolean("admin"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void obtenerUsuario(String nombre) {
+        try (Connection conn = conectar()) {
+            String sql = "SELECT * FROM usuarios WHERE nombre = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, nombre);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                System.out.println("Usuario: " + rs.getString("nombre") + ", Admin: " + rs.getBoolean("admin"));
+            } else {
+                System.out.println("Usuario no encontrado.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
