@@ -232,7 +232,6 @@ public class MainController {
         context.render("/templates/resetear-subasta.ftl", model);
     }
 
-    // app.get("/admin/validar-subastas", MainController::mostrarSubastasPendientes);
     public static void mostrarSubastasPendientes(Context context) {
         String username = context.sessionAttribute("username");
         if (username == null || !(Boolean.TRUE.equals(context.sessionAttribute("isAdministrator")))) {
