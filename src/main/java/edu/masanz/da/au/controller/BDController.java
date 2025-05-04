@@ -147,5 +147,27 @@ public class BDController {
         }
     }
 
+    public void verItemsConPujas() {
+        String sql = "SELECT DISTINCT i.id, i.nombre FROM items i JOIN pujas p ON i.id = p.item_id";
+        System.out.println("--- Items con Pujas ---");
+        try (Connection conn = conectar();
+             PreparedStatement pst = conn.prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+
+            boolean encontrado = false;
+            while (rs.next()) {
+                encontrado = true;
+                System.out.println("ID Item: " + rs.getLong("id") + ", Nombre: " + rs.getString("nombre"));
+            }
+            if (!encontrado) {
+                System.out.println("No se encontraron items con pujas.");
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al obtener items con pujas:");
+            e.printStackTrace(); 
+        }
+    }
+
 
 }
