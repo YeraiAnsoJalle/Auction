@@ -198,4 +198,22 @@ public class MainController {
         model.put("username", username);
         context.render("/templates/crear-puja.ftl", model);
     }
+
+    
+
+    public static void resetearSubasta(Context context) {
+        String username = context.sessionAttribute("username");
+        if (username == null) {
+            context.redirect("/error");
+            return;
+        }
+        boolean isAdministrator = context.sessionAttribute("isAdministrator");
+        if (!isAdministrator) {
+            context.redirect("/error");
+            return;
+        }
+        AuctionService.resetearSubasta();
+        context.redirect("/menu");
+    }
+    
 }

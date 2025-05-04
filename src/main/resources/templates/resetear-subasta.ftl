@@ -7,6 +7,7 @@
     <title>resetear-subasta</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div class="botones">
         <div class="salir">
@@ -18,12 +19,12 @@
     </div>
 
     <div class="contenedorPujasGanadores">
-
-        <h2 class="item">Resetear Página Subastas: </h2>
+        <h2 class="item">Resetear Página Subastas:</h2>
         <div class="cajaResetearSubasta">
-            <button>RESET</button>
+            <form action="/admin/resetear-subasta" method="post">
+                <button type="submit">RESET</button>
+            </form>
         </div>
     </div>
-</div>
 </body>
 </html>
