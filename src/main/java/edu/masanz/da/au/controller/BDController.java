@@ -169,5 +169,19 @@ public class BDController {
         }
     }
 
+    public void resetearSubastas() {
+        String sql = "DELETE FROM pujas"; 
+        try (Connection conn = conectar();
+             PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            int filasAfectadas = pst.executeUpdate();
+            System.out.println("Subastas reseteadas. Se eliminaron " + filasAfectadas + " pujas.");
+
+        } catch (Exception e) {
+            System.err.println("Error al resetear las subastas (eliminar pujas):");
+            e.printStackTrace();
+        }
+    }
+
 
 }
