@@ -47,6 +47,8 @@ public class Main {
 
         app.get("/admin/validar-pujas", MainController::mostrarSubastasPendientes);
 
+        app.get("/admin/pujas", MainController::mostrarArticulosConPujas);
+
 
 
     }
