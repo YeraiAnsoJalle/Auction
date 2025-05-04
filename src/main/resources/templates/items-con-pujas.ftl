@@ -18,7 +18,7 @@
     </div>
 
     <div class="contenedorPujasGanadores">
-        <#list items as item>
+        <#list obtenerArticulosConPujas as item>
             <div class="item">
                 <img src="${item.imagen}" alt="imagen ${item.nombre}">
                 <h2><strong>${item.nombre}</strong></h2>
