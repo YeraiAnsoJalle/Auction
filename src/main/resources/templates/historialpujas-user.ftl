@@ -9,10 +9,10 @@
 <body>
     <div class="botones">
         <div class="salir">
-            <a href="/doc/web/index.html"><img src="/doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
+            <a href="/doc/web/index.html"><img src="doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
         </div>
         <div class="salir">
-            <a href="/doc/web/user/menu-user.html"><img src="/doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
+            <a href="/doc/web/user/menu-user.html"><img src="doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
         </div>
     </div>
         <div class="contenedorPujasGanadores">
