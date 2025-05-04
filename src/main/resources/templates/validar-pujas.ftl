@@ -12,10 +12,10 @@
 <body>
     <div class="botones">
         <div class="salir">
-            <a href="/doc/web/index.html"><img src="doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
+            <a href="loginB.ftl"><img src="doc/web/img/iconoSalir.png" alt="iconoSalir"/></a>
         </div>
         <div class="salir">
-            <a href="/doc/web/admin/menu-admin.html"><img src="doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
+            <a href="menuB.ftl"><img src="doc/web/img/flechaVolver.png" alt="iconoVolver"/></a>
         </div>
     </div>
 
