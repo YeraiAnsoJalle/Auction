@@ -22,7 +22,10 @@ public class Ini {
             "2,Palo de \"Pico\",Palo con forma de Pico.,30,https://i.postimg.cc/1t591Vth/paloPico.jpg,Aitor,0,false",
             "3,Palo de \"Bayesta\",Palo con forma de Bayesta.,35,https://i.postimg.cc/pXNLpTc8/palo-Bayesta.jpg,Alba,1,false",
             "4,Palo de \"Maza\",Palo con forma de Maza.,25,https://i.postimg.cc/jCV02Dsj/paloMaza.jpg,Javi,1,false",
-            "5,Palo de \"Espada\",Palo con forma de Espada.,20,https://i.postimg.cc/Y0F2dK0h/palo-Espada.jpg,Aitor,1,false"
+            "5,Palo de \"Espada\",Palo con forma de Espada.,20,https://i.postimg.cc/Y0F2dK0h/palo-Espada.jpg,Aitor,1,false",
+            "6,Palo de \"Baston\",Palo con forma de Baston.,60,https://i.postimg.cc/yxdHgq4D/palo-Baston.jpg,Yerai,0,true",
+            "7,Palo de \"Pistola\",Palo con forma de Pistola.,30,https://i.postimg.cc/C5y20WMy/palo-Pistola.jpg,Eneko,0,true",
+            "8,Palo de \"Varita\",Palo con forma de Varita.,40,https://i.postimg.cc/QC2hR6wV/palo-Varita.jpg,Pablo,1,true"
     };
 
     public static final String[] PUJAS = {

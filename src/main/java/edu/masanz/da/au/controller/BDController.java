@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class BDController {
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/ut10ejemplos";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/subastas";
     private static final String USER = "root";
     private static final String PASS = "root";
 
