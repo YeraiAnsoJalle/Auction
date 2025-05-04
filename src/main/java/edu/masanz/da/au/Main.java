@@ -45,6 +45,8 @@ public class Main {
 
         app.get("/admin/resetear-subasta", MainController::marcarTodosLosItemsComoHistoricos);
 
+        app.get("/admin/validar-subastas", MainController::mostrarSubastasPendientes);
+
     }
 
 }
